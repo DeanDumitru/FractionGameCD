@@ -10,7 +10,7 @@ public class OnPause : MonoBehaviour {
 
 	void Start ()
     {
-        Cursor.visible = false;
+        //Cursor.visible = false;
         //MenuToDisplay.SetActive(false);
     }
 	
@@ -23,14 +23,14 @@ public class OnPause : MonoBehaviour {
             if (isPause)
             {
                 Time.timeScale = 0;
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 MenuToDisplay.SetActive(true);
                 Character.SetActive(false);
             }
             else if (isPause == false)
             {
                 Time.timeScale = 1;
-                Cursor.visible = false;
+                //Cursor.visible = false;
                 MenuToDisplay.SetActive(false);
                 Character.SetActive(true);
             }
