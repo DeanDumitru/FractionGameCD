@@ -4,7 +4,8 @@ using System.Collections;
 
 public class FractionManager : MonoBehaviour
 {
-    public static int score;   
+    public static int score;
+    public int denominator; 
     public int StartingCogPart;    
     Text text;                    
 
@@ -16,6 +17,8 @@ public class FractionManager : MonoBehaviour
 
     void Update()
     {
-        text.text = "Fraction: " + score + "/6";
+        if (score == 0)
+            text.text = "Fraction: " + "?/" + denominator;
+        else text.text = "Fraction: " + score + "/" + denominator;
     }
 }
