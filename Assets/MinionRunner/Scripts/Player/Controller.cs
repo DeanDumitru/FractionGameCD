@@ -51,7 +51,7 @@ public class Controller : MonoBehaviour
 
     void Move(float h, float v)
     {
-        movement.Set(h, 0f, v);
+        movement.Set(v, 0f, -h);
         movement = movement.normalized * speed * Time.deltaTime; // time between every call
         playerRigidbody.MovePosition(transform.localPosition + movement);
         //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
