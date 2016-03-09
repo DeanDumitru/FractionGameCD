@@ -15,6 +15,11 @@ public class FractionManager : MonoBehaviour
         score = StartingCogPart;
     }
 
+    void Start()
+    {
+        score = 0;
+    }
+
     void Update()
     {
         if (score == 0)

@@ -3,27 +3,31 @@ using System.Collections;
 
 public class GameManager1 : MonoBehaviour {
 
+    public int FinalFraction;
     public GameObject Player;
     public GameObject OtherPlayer;
-    
-    Rigidbody rig;
+    public GameObject light1;
+    public GameObject NextButton;
+    public GameObject[] TextToShow;
 
-    public GameObject TextToShow;
+    int index;
 
 	// Use this for initialization
 	void Start ()
     {
-        rig = Player.GetComponent<Rigidbody>();
+        index = Random.Range(0, TextToShow.Length);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-	    if(FractionManager.score == 3)
+	    if(FractionManager.score == FinalFraction)
         {
             Player.SetActive(true);
             OtherPlayer.SetActive(false);
-            TextToShow.SetActive(true);
+            TextToShow[index].SetActive(true);
+            light1.SetActive(true);
+            NextButton.SetActive(true);
         }
 	}
 }
