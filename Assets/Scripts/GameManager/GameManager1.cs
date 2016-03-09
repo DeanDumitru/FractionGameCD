@@ -8,6 +8,7 @@ public class GameManager1 : MonoBehaviour {
     public GameObject OtherPlayer;
     public GameObject light1;
     public GameObject NextButton;
+	public GameObject Inventory = null;
     public GameObject[] TextToShow;
 
     int index;
@@ -28,6 +29,7 @@ public class GameManager1 : MonoBehaviour {
             TextToShow[index].SetActive(true);
             light1.SetActive(true);
             NextButton.SetActive(true);
+			Inventory.SetActive (true);
         }
 	}
 }
