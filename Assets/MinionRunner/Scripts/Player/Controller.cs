@@ -57,14 +57,14 @@ public class Controller : MonoBehaviour
         //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
     } 
 
-    void OnTriggerEnter(Collider other)
+/*    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
         }
     }
-
+*/
     void Animating(float h, float v)
     {
         bool walking = h != 0f || v != 0f;
