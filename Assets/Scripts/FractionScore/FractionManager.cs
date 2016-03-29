@@ -23,7 +23,7 @@ public class FractionManager : MonoBehaviour
     void Update()
     {
         if (score == 0)
-            text.text = "Fraction: " + "?/" + denominator;
-        else text.text = "Fraction: " + score + "/" + denominator;
+            text.text = "FRACTION: " + "?/" + denominator;
+        else text.text = "FRACTION: " + score + "/" + denominator;
     }
 }

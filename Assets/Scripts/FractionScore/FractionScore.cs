@@ -6,6 +6,7 @@ public class FractionScore : MonoBehaviour {
 
     public int FractionValue = 0;
     public GameObject UICog;
+    public AudioClip pick;
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,6 +14,7 @@ public class FractionScore : MonoBehaviour {
         {
             FractionManager.score += FractionValue;
             UICog.SetActive(false);
+            AudioSource.PlayClipAtPoint(pick, UICog.transform.position);
         }
     }
 }

@@ -9,7 +9,6 @@ public class GameManager1 : MonoBehaviour {
     public GameObject light1;
     public GameObject NextButton;
     public GameObject[] TextToShow;
-
     int index;
 
 	// Use this for initialization
