@@ -8,6 +8,7 @@ public class GameManager2 : MonoBehaviour {
     public GameObject OtherPlayer;
     public GameObject light1;
     public GameObject[] TextToShow;
+    public GameObject[] TextToHide;
     int index;
     public GameObject newGM;
 
@@ -27,6 +28,9 @@ public class GameManager2 : MonoBehaviour {
             TextToShow[index].SetActive(true);
             light1.SetActive(true);
             newGM.SetActive(true);
+
+            foreach (GameObject i in TextToHide)
+                i.SetActive(false);
         }
 	}
 }

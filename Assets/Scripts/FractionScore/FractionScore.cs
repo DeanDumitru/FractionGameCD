@@ -7,6 +7,9 @@ public class FractionScore : MonoBehaviour {
     public int FractionValue = 0;
     public GameObject text;
 
+    public GameObject CollectIcon;
+    public GameObject CollectText;
+
     public GameObject UICog;
     public AudioClip pick;
 
@@ -17,6 +20,8 @@ public class FractionScore : MonoBehaviour {
             FractionManager.score += FractionValue;
             UICog.SetActive(false);
             text.SetActive(true);
+            CollectIcon.SetActive(false);
+            CollectText.SetActive(false);
             AudioSource.PlayClipAtPoint(pick, UICog.transform.position);
         }
     }

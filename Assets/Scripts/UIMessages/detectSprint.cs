@@ -4,6 +4,7 @@ using System.Collections;
 public class detectSprint : MonoBehaviour
 {
     public GameObject TextToHide;
+    public GameObject[] ColletToShow;
     public GameObject Player;
     Rigidbody rig;
 
@@ -17,7 +18,12 @@ public class detectSprint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))  
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
             TextToHide.SetActive(false);
+
+            foreach (GameObject i in ColletToShow)
+                i.SetActive(true);
+        }
     }
 }

@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour {
     public GameObject OtherText;
     public GameObject Player;
     public GameObject OtherPlayer;
+    public GameObject[] ToHide;
 
     bool isMoving;
     // Use this for initialization
@@ -33,6 +34,9 @@ public class Timer : MonoBehaviour {
                 Player.SetActive(true);
                 OtherPlayer.SetActive(false);
                 OtherText.SetActive(false);
+
+                foreach (GameObject i in ToHide)
+                    i.SetActive(false);
             }
         }
     }

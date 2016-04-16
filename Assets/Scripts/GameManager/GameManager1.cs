@@ -9,13 +9,20 @@ public class GameManager1 : MonoBehaviour {
     public GameObject light1;
     public GameObject NextButton;
     public GameObject[] TextToShow;
+    public GameObject[] TextToHide;
     int index;
 
-	// Use this for initialization
-	void Start ()
+    /*public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;*/
+
+    // Use this for initialization
+    void Start ()
     {
         index = Random.Range(0, TextToShow.Length);
-	}
+       // Cursor.visible = false;
+       
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -27,6 +34,12 @@ public class GameManager1 : MonoBehaviour {
             TextToShow[index].SetActive(true);
             light1.SetActive(true);
             NextButton.SetActive(true);
+
+            /*Cursor.visible = true;
+            Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);*/
+
+            foreach (GameObject i in TextToHide)
+                i.SetActive(false);
         }
 	}
 }

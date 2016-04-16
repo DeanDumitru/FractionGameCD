@@ -10,6 +10,9 @@ public class Loot1 : MonoBehaviour {
     public GameObject text;
     public AudioClip pick;
 
+    public GameObject CollectIcon;
+    public GameObject CollectText;
+
     ItemClass1 itemObject = new ItemClass1();
 
     private Ray mouseRay;
