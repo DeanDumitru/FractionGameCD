@@ -12,18 +12,21 @@ public class ItemClass1 : MonoBehaviour
     static public Texture2D Cog56;
     static public Texture2D Cog66;*/
 
+    
+
+
     // Items
-    public ItemCreatorClass1 cog16 = new ItemCreatorClass1(0, "Part 1/6", null, "Cogwheel fraction 1/6");
-    public ItemCreatorClass1 cog26 = new ItemCreatorClass1(1, "Part 2/6", null, "Cogwheel fraction 2/6");
-    public ItemCreatorClass1 cog36 = new ItemCreatorClass1(2, "Part 3/6", null, "Cogwheel fraction 3/6");
-    public ItemCreatorClass1 cog46 = new ItemCreatorClass1(3, "Part 4/6", null, "Cogwheel fraction 4/6");
-    public ItemCreatorClass1 cog56 = new ItemCreatorClass1(4, "Part 5/6", null, "Cogwheel fraction 5/6");
-    public ItemCreatorClass1 cog66 = new ItemCreatorClass1(5, "Whole 6/6", null, "Cogwheel fraction 6/6");
+    public ItemCreatorClass1 cog14 = new ItemCreatorClass1(0, "Part 1/6", null, "Cogwheel fraction 1/6");
+    public ItemCreatorClass1 cog24 = new ItemCreatorClass1(1, "Part 2/6", null, "Cogwheel fraction 2/6");
+    public ItemCreatorClass1 cog34 = new ItemCreatorClass1(2, "Part 3/6", null, "Cogwheel fraction 3/6");
+    public ItemCreatorClass1 cog44 = new ItemCreatorClass1(3, "Part 4/6", null, "Cogwheel fraction 4/6");
+   
 
 
     void Start()
     {
     }
+
     void Update()
     {
     }

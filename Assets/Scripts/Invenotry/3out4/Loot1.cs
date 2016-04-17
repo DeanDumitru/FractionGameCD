@@ -18,15 +18,23 @@ public class Loot1 : MonoBehaviour {
     private Ray mouseRay;
     private RaycastHit rayHit;
 
+    public Texture2D icon14;
+    public Texture2D icon24;
+    public Texture2D icon34;
+    public Texture2D icon44;
+
     /*private Dictionary<int, string> lootDictionary = new Dictionary<int, string>()
     {
         {1, null}
     };*/
-	
-	void Start ()
+
+    void Start ()
     {
-        
-	}
+        InventoryGUI1.InventoryNameDictionary1[0] = icon14;
+        InventoryGUI1.InventoryNameDictionary1[1] = icon24;
+        InventoryGUI1.InventoryNameDictionary1[2] = icon34;
+        InventoryGUI1.InventoryNameDictionary1[3] = icon44;
+    }
 
 	void Update ()
     {
@@ -62,45 +70,32 @@ public class Loot1 : MonoBehaviour {
             /////////////////////////
             if (fractionValue == 1)
             {
-                itemObject.cog16.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[0] = itemObject.cog16.icon;
+                itemObject.cog14.SetIcon(i1);
+                InventoryGUI1.InventoryNameDictionary1[0] = itemObject.cog14.icon;
                 InventoryGUI1.dictonaryAmounts1[0] += 1;
             }
 
             else if (fractionValue == 2)
             {
-                itemObject.cog26.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[1] = itemObject.cog26.icon;
+                itemObject.cog24.SetIcon(i1);
+                InventoryGUI1.InventoryNameDictionary1[1] = itemObject.cog24.icon;
                 InventoryGUI1.dictonaryAmounts1[1] += 1;
             }
 
             else if (fractionValue == 3)
             {
-                itemObject.cog36.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[2] = itemObject.cog36.icon;
+                itemObject.cog34.SetIcon(i1);
+                InventoryGUI1.InventoryNameDictionary1[2] = itemObject.cog34.icon;
                 InventoryGUI1.dictonaryAmounts1[2] += 1;
             }
 
             else if (fractionValue == 4)
             {
-                itemObject.cog46.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[3] = itemObject.cog46.icon;
+                itemObject.cog44.SetIcon(i1);
+                InventoryGUI1.InventoryNameDictionary1[3] = itemObject.cog44.icon;
                 InventoryGUI1.dictonaryAmounts1[3] += 1;
             }
 
-            else if (fractionValue == 5)
-            {
-                itemObject.cog56.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[4] = itemObject.cog56.icon;
-                InventoryGUI1.dictonaryAmounts1[4] += 1;
-            }
-
-            else if (fractionValue == 6)
-            {
-                itemObject.cog66.SetIcon(i1);
-                InventoryGUI1.InventoryNameDictionary1[5] = itemObject.cog66.icon;
-                InventoryGUI1.dictonaryAmounts1[5] += 1;
-            }
             /////////////////////////
         }
     }
