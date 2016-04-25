@@ -1,0 +1,1 @@
+Plase copy what you have inside the Assets folder in this folder and push on Git.
