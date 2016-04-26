@@ -10,10 +10,12 @@ public class GameManager3 : MonoBehaviour {
     //public GameObject background;
     //public GameObject endText;
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
     {
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -23,8 +25,10 @@ public class GameManager3 : MonoBehaviour {
             Player.SetActive(true);
             OtherPlayer.SetActive(false);
             newGM.SetActive(true);
-           // background.SetActive(true);
-           // endText.SetActive(true);
+            // background.SetActive(true);
+            // endText.SetActive(true);
+
+            
         }
 	}
 }

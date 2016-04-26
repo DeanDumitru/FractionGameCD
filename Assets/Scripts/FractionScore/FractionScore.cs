@@ -17,7 +17,7 @@ public class FractionScore : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            FractionManager.score += FractionValue;
+            FractionManager.score += FractionValue; 
             UICog.SetActive(false);
             text.SetActive(true);
             CollectIcon.SetActive(false);

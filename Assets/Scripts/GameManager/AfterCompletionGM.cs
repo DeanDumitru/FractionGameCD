@@ -26,7 +26,7 @@ public class AfterCompletionGM : MonoBehaviour
         foreach (GameObject i in deactivateText)
             i.SetActive(false);
         invetory.SetActive(true);
-
+        
         foreach (GameObject i in activateText)
             i.SetActive(true);
     }

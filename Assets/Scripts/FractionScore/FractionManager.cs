@@ -26,4 +26,9 @@ public class FractionManager : MonoBehaviour
             text.text = "FRACTION: " + "?/" + denominator;
         else text.text = "FRACTION: " + score + "/" + denominator;
     }
+
+    void setScore(int score1)
+    {
+        score = score1;
+    }
 }

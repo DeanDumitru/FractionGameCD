@@ -11,6 +11,14 @@ public class GameManager4 : MonoBehaviour {
     public GameObject newBackground;
     public GameObject button;
 
+    public bool invetoryStatus = false;
+
+    public GameObject failBackground;
+    public GameObject failText;
+    public GameObject failButton;
+    public GameObject disableWhole;
+    public GameObject disableWholeText;
+
     private int index;
 
     // Use this for initialization
@@ -29,6 +37,27 @@ public class GameManager4 : MonoBehaviour {
             oldText.SetActive(false);
             newBackground.SetActive(true);
             newText.SetActive(true);
+            button.SetActive(true);
+            disableWhole.SetActive(false);
+            disableWholeText.SetActive(false);
+            if(FinalFraction == 6)
+                 InventoryGUI.inventoryToggle = invetoryStatus;
+            else if(FinalFraction == 5)
+            InventoryGUI2.inventoryToggle = invetoryStatus;
+        }
+        else if(FractionManager.score < FinalFraction)
+        {
+            oldBackground.SetActive(false);
+            oldText.SetActive(false);
+            failBackground.SetActive(true);
+            failButton.SetActive(true);
+            failText.SetActive(true);
+            disableWhole.SetActive(false);
+            disableWholeText.SetActive(false);
+            if (FinalFraction == 6)
+                InventoryGUI.inventoryToggle = false;
+            else if (FinalFraction == 5)
+                InventoryGUI2.inventoryToggle = false;
         }
 	}
 }

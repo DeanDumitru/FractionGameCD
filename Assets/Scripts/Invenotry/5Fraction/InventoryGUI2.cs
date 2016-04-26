@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
-public class InventoryGUI : MonoBehaviour
+public class InventoryGUI2 : MonoBehaviour
 {
     public static bool inventoryToggle = false;
     private Rect inventoryRect = new Rect(300, 100, 422, 240);
@@ -16,13 +16,11 @@ public class InventoryGUI : MonoBehaviour
         {1, null},
         {2, null},
         {3, null},
-        {4, null},
-        {5, null}
+        {4, null}
     };
 
         static public List<int> dictonaryAmounts = new List<int>()
     {
-        0,
         0,
         0,
         0,
@@ -116,7 +114,7 @@ public class InventoryGUI : MonoBehaviour
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        if(GUI.Button(new Rect(1, 90, 70, 70), InventoryNameDictionary[3]))
+        if(GUI.Button(new Rect(53, 90, 70, 70), InventoryNameDictionary[3]))
         {
             if (dictonaryAmounts[3] != 0)
             {
@@ -129,9 +127,9 @@ public class InventoryGUI : MonoBehaviour
                 GUI.Button(new Rect(1, 90, 70, 70), "");
             }*/
         }
-        GUI.Box(new Rect(73, 103, 50, 50), dictonaryAmounts[3].ToString());
+        GUI.Box(new Rect(125, 103, 50, 50), dictonaryAmounts[3].ToString());
 
-        if(GUI.Button(new Rect(145, 90, 70, 70), InventoryNameDictionary[4]))
+        if(GUI.Button(new Rect(253, 90, 70, 70), InventoryNameDictionary[4]))
         {
             if (dictonaryAmounts[4] != 0)
             {
@@ -144,22 +142,8 @@ public class InventoryGUI : MonoBehaviour
                 GUI.Button(new Rect(145, 90, 70, 70), "");
             }*/
         }
-        GUI.Box(new Rect(217, 103, 50, 50), dictonaryAmounts[4].ToString());
+        GUI.Box(new Rect(325, 103, 50, 50), dictonaryAmounts[4].ToString());
 
-        if (GUI.Button(new Rect(288, 90, 70, 70), InventoryNameDictionary[5]))
-        {
-            if (dictonaryAmounts[5] != 0)
-            {
-                dictonaryAmounts[5] -= 1;
-                FractionManager.score -= 6;
-            }
-            /*if (dictonaryAmounts[5] == 0)
-            {
-                itemObject.cog66.SetIcon(null);
-                GUI.Button(new Rect(288, 90, 70, 70), "");
-            }*/
-        }
-        GUI.Box(new Rect(360, 103, 50, 50), dictonaryAmounts[5].ToString());
         GUILayout.EndHorizontal();
 
         GUILayout.EndArea();

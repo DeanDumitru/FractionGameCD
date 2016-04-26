@@ -20,5 +20,12 @@ public class InventorySet6 : MonoBehaviour
         InventoryGUI.InventoryNameDictionary[3] = icon46;
         InventoryGUI.InventoryNameDictionary[4] = icon56;
         InventoryGUI.InventoryNameDictionary[5] = icon66;
+
+        InventoryGUI.dictonaryAmounts[0] = 0;
+        InventoryGUI.dictonaryAmounts[1] = 0;
+        InventoryGUI.dictonaryAmounts[2] = 0;
+        InventoryGUI.dictonaryAmounts[3] = 0;
+        InventoryGUI.dictonaryAmounts[4] = 0;
+        InventoryGUI.dictonaryAmounts[5] = 0;
     }
 }
