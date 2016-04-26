@@ -21,6 +21,8 @@ public class GameManager1 : MonoBehaviour {
     {
         index = Random.Range(0, TextToShow.Length);
        // Cursor.visible = false;
+
+		Analytics.gua.sendAppScreenHit("1out2");
        
     }
 	
