@@ -10,7 +10,7 @@ public class InventoryGUI : MonoBehaviour
 
     bool usingSlider;
 
-    static public Dictionary<int, Texture2D> InventoryNameDictionary = new Dictionary<int, Texture2D>()
+    static public Dictionary<int, Texture2D> InventoryNameDictionary = new Dictionary<int, Texture2D>() 
     {
         {0, null},
         {1, null},
@@ -20,7 +20,7 @@ public class InventoryGUI : MonoBehaviour
         {5, null}
     };
 
-        static public List<int> dictonaryAmounts = new List<int>()
+        static public List<int> dictonaryAmounts = new List<int>() 
     {
         0,
         0,
@@ -29,6 +29,8 @@ public class InventoryGUI : MonoBehaviour
         0,
         0
     };
+
+    
 
     void start()
     {
