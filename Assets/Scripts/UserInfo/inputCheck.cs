@@ -21,6 +21,8 @@ public class inputCheck : MonoBehaviour {
     public GameObject dobReq;
     public GameObject pnReq;
 
+    public string currentLevel;
+
     public void checkInputs()
     {
         /* if (username.text == "")
@@ -67,12 +69,15 @@ public class inputCheck : MonoBehaviour {
             UserClass.player.email = email.text;
             UserClass.player.dob = dob.text;
             UserClass.player.pn = pn.text;
-            UserClass.player.problemId = "Create New User";
+            UserClass.player.problemId = currentLevel;
             UserClass.player.success = true;
             UserClass.player.score = -1;
-            UserClass.player.hintId = null;
+            UserClass.player.hintId = "Succesfully created a new user";
 
             UserClass.record.Add(UserClass.player);
+            UserClass.player.printUserMain();
+
+            //UserClass.player.printUser();
 
             Application.LoadLevel("UserInfoSuccess");
         }

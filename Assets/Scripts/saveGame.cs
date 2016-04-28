@@ -9,7 +9,7 @@ public class saveGame : MonoBehaviour
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.txt", FileMode.Open);
+        FileStream file = File.Open("Assets/RecordsTet/usersData.txt", FileMode.Open);
 
         bf.Serialize(file, UserClass.player);
         file.Close();

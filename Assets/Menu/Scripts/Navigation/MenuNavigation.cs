@@ -28,7 +28,7 @@ public class MenuNavigation : MonoBehaviour
     //***All Types of possible Scenes***
     private const string Level1 = null;
 	private const string Level2 = "Level 1.1";
-	private const string Level3 = "1out2";
+	private const string Level3 = "GetUserInfo";
    // private const string UnionGame = "UnionAlgorithmScene";
 
     //Keep track of which panel the user is in

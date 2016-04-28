@@ -7,7 +7,8 @@ public class EnterNewLevel : MonoBehaviour {
 
 	void Start () {
 		//Analytics.gua.sendAppScreenHit(levelName);
-	}
+        //Analytics.gua.sendAppScreenHit(“screen name”)
+    }
 	
 	// Update is called once per frame
 	void Update () {

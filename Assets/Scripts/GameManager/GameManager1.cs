@@ -10,6 +10,10 @@ public class GameManager1 : MonoBehaviour {
     public GameObject NextButton;
     public GameObject[] TextToShow;
     public GameObject[] TextToHide;
+
+    public GameObject PrintDataSuccess;
+    public GameObject incrementScore;
+
     int index;
 
     /*public Texture2D cursorTexture;
@@ -20,7 +24,7 @@ public class GameManager1 : MonoBehaviour {
     void Start ()
     {
         index = Random.Range(0, TextToShow.Length);
-       // Cursor.visible = false;
+        // Cursor.visible = false;
     }
 	
 	// Update is called once per frame
@@ -28,6 +32,9 @@ public class GameManager1 : MonoBehaviour {
     {
 	    if(FractionManager.score == FinalFraction)
         {
+            PrintDataSuccess.SetActive(true);
+            incrementScore.SetActive(true);
+
             Player.SetActive(true);
             OtherPlayer.SetActive(false);
             TextToShow[index].SetActive(true);
@@ -39,6 +46,9 @@ public class GameManager1 : MonoBehaviour {
 
             foreach (GameObject i in TextToHide)
                 i.SetActive(false);
+
         }
 	}
+
+    
 }

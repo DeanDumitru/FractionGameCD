@@ -4,8 +4,8 @@ using System.Collections;
 public class OnPause : MonoBehaviour {
 
     public GameObject MenuToDisplay;
-    public GameObject Character;
-    public bool isPause = false;
+    ///public GameObject Character;
+    static public bool isPause = false;
     
 
 	void Start ()
@@ -25,15 +25,18 @@ public class OnPause : MonoBehaviour {
                 Time.timeScale = 0;
                 //Cursor.visible = true;
                 MenuToDisplay.SetActive(true);
-                Character.SetActive(false);
+                //Character.SetActive(false);
             }
             else if (isPause == false)
             {
                 Time.timeScale = 1;
                 //Cursor.visible = false;
                 MenuToDisplay.SetActive(false);
-                Character.SetActive(true);
+                //Character.SetActive(true);
             }
         }
+
+        if(isPause == false)
+            MenuToDisplay.SetActive(false);
     }
 }

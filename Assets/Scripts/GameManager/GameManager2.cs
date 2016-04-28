@@ -12,6 +12,8 @@ public class GameManager2 : MonoBehaviour {
     int index;
     public GameObject newGM;
 
+    public GameObject incrementScore;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -23,6 +25,8 @@ public class GameManager2 : MonoBehaviour {
     {
 	    if(FractionManager.score == FinalFraction)
         {
+            incrementScore.SetActive(true);
+
             Player.SetActive(true);
             OtherPlayer.SetActive(false);
             TextToShow[index].SetActive(true);

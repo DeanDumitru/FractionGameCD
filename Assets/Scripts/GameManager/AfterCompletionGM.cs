@@ -11,6 +11,8 @@ public class AfterCompletionGM : MonoBehaviour
     public GameObject[] activateText;
     public GameObject invetory;
 
+    public string currentLevel;
+
 	
 	void Start ()
     {
@@ -29,5 +31,13 @@ public class AfterCompletionGM : MonoBehaviour
         
         foreach (GameObject i in activateText)
             i.SetActive(true);
+
+        UserClass.player.problemId = currentLevel;
+        UserClass.player.score = FractionManager.score;
+        UserClass.player.success = true;
+        UserClass.player.hintId = "Succesfully completed the level";
+
+        UserClass.player.printUserByLevel();
+        UserClass.record.Add(UserClass.player);
     }
 }

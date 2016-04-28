@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using System.IO;
 
 public class UserClass : MonoBehaviour {
 
@@ -21,6 +22,12 @@ public class UserClass : MonoBehaviour {
         public bool success;
         public int score;
         public string hintId;
+
+
+        /// <summary>
+        ///  One score for each individual level and one score for the total game.
+        /// </summary>
+        /// 
 
         public user(string userId1, string fn, string ln, string email1, string dob1, string pn1, string problemId1, bool success1, int score1, string hintId1)
         {
@@ -81,19 +88,33 @@ public class UserClass : MonoBehaviour {
             return hintId;
         }
 
-        public void printUser()
+        public void printUserMain()
         {
-            
+            using (StreamWriter sw = new StreamWriter("Assets/RecordsTest/playerRecords.txt", true))  // True to append data to the file; false to overwrite the file
+            {
+                sw.WriteLine(player.userId + "," + player.firstName + "," + player.lastName + "," + player.email + "," + player.dob + "," + player.pn
+                    + "," + player.problemId + "," + player.success + "," + player.score + "," + player.hintId + "," + "\n");
+            }
         }
+
+        public void printUserByLevel()
+        {
+            using (StreamWriter sw = new StreamWriter("Assets/RecordsTest/playerRecordsByLevel.txt", true))  // True to append data to the file; false to overwrite the file
+            {
+                sw.WriteLine(player.userId + "," + player.problemId + "," + player.success + "," + player.score + "," + player.hintId  + "\n\n");
+            }
+        }
+
     }
 
     //static public Dictionary<string, user> record = new Dictionary<string, user>();
     static public List<user> record = new List<user>();
+    
 
-    public void printList()
+    /*public void printList()
     {
         foreach (user i in record)
             i.printUser();
-    }
+    }*/
 
 }

@@ -10,6 +10,7 @@ public class FSsuccessText : MonoBehaviour {
     void Awake()
     {
         text = GetComponent<Text>();
+        ScoreManager.score = 0;
     }
 
     void Update()

@@ -5,6 +5,7 @@ public class MainMenuButton : MonoBehaviour {
 
 	public void click()
     {
-        Application.LoadLevel("Menu");
+        //Application.LoadLevel("Menu");
+        OnPause.isPause = false;
     }
 }

@@ -26,8 +26,9 @@ public class Timer : MonoBehaviour {
         if (isMoving)
         {
             timeLeft -= Time.deltaTime;
-            if (timeLeft < 0)
+            if (timeLeft < 0 && timeLeft > -1)
             {
+                isMoving = false;
                 //Application.LoadLevel(Application.loadedLevel);
                 TextFail.SetActive(true);
                 RestartButton.SetActive(true);
@@ -37,6 +38,16 @@ public class Timer : MonoBehaviour {
 
                 foreach (GameObject i in ToHide)
                     i.SetActive(false);
+
+                UserClass.player.problemId = "2out3";
+                UserClass.player.score = -1;
+                UserClass.player.success = false;
+                UserClass.player.hintId = "Failed to sprint in time";
+
+                UserClass.player.printUserByLevel();
+                UserClass.record.Add(UserClass.player);
+
+
             }
         }
     }

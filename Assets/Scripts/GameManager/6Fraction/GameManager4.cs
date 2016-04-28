@@ -19,6 +19,8 @@ public class GameManager4 : MonoBehaviour {
     public GameObject disableWhole;
     public GameObject disableWholeText;
 
+    public string currentLevel;
+
     private int index;
 
     // Use this for initialization
@@ -44,6 +46,14 @@ public class GameManager4 : MonoBehaviour {
                  InventoryGUI.inventoryToggle = invetoryStatus;
             else if(FinalFraction == 5)
             InventoryGUI2.inventoryToggle = invetoryStatus;
+
+            UserClass.player.score = FractionManager.score;
+            UserClass.player.success = true;
+            UserClass.player.hintId = "Correctly did subtraction";
+            UserClass.player.problemId = currentLevel;
+
+            UserClass.player.printUserByLevel();
+            UserClass.record.Add(UserClass.player);
         }
         else if(FractionManager.score < FinalFraction)
         {
@@ -58,6 +68,14 @@ public class GameManager4 : MonoBehaviour {
                 InventoryGUI.inventoryToggle = false;
             else if (FinalFraction == 5)
                 InventoryGUI2.inventoryToggle = false;
+
+            UserClass.player.score = FractionManager.score;
+            UserClass.player.success = false;
+            UserClass.player.hintId = "Incorrectly did subtraction";
+            UserClass.player.problemId = currentLevel;
+
+            UserClass.player.printUserByLevel();
+            UserClass.record.Add(UserClass.player);
         }
 	}
 }
