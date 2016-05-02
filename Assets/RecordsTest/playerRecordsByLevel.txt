@@ -1,0 +1,6 @@
+,1out5 Succesfull found cogs,True,9,Succesfully completed the level
+
+
+,1out5 - Subtraction,True,5,Correctly did subtraction
+
+

@@ -90,7 +90,7 @@ public class UserClass : MonoBehaviour {
 
         public void printUserMain()
         {
-            using (StreamWriter sw = new StreamWriter("Assets/RecordsTest/playerRecords.txt", true))  // True to append data to the file; false to overwrite the file
+            using (StreamWriter sw = new StreamWriter("MinionRunner_Data/playerRecords.txt", true))  // True to append data to the file; false to overwrite the file
             {
                 sw.WriteLine(player.userId + "," + player.firstName + "," + player.lastName + "," + player.email + "," + player.dob + "," + player.pn
                     + "," + player.problemId + "," + player.success + "," + player.score + "," + player.hintId + "," + "\n");
@@ -99,7 +99,7 @@ public class UserClass : MonoBehaviour {
 
         public void printUserByLevel()
         {
-            using (StreamWriter sw = new StreamWriter("Assets/RecordsTest/playerRecordsByLevel.txt", true))  // True to append data to the file; false to overwrite the file
+            using (StreamWriter sw = new StreamWriter("MinionRunner_Data/playerRecordsByLevel.txt", true))  // True to append data to the file; false to overwrite the file
             {
                 sw.WriteLine(player.userId + "," + player.problemId + "," + player.success + "," + player.score + "," + player.hintId  + "\n\n");
             }
