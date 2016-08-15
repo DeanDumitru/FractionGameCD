@@ -1,11 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rotation : MonoBehaviour {
+public class Rotation : MonoBehaviour
+{
 
+    public float rotateRate = 1.0f;
+    public float InvokeRate = 1.0f;
 
-	// Update is called once per frame
-	void FixedUpdate () {
-        transform.Rotate(new Vector3(0, 0, -45) * Time.deltaTime);
+    float xRot;
+
+    void Start()
+    {
+        InvokeRepeating("newRotation", 0.0f, InvokeRate);
+    }
+
+    void FixedUpdate()
+    {
+        transform.Rotate(Vector3.right, Time.deltaTime*xRot);
+    }
+
+    void newRotation()
+    {
+        xRot = Random.Range(-100, 100);
     }
 }

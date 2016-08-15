@@ -30,7 +30,7 @@ public class Controller : MonoBehaviour
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
-    //    shot = ball.GetComponent<Rigidbody>();
+        //    shot = ball.GetComponent<Rigidbody>();
     }
 
 
@@ -39,7 +39,7 @@ public class Controller : MonoBehaviour
         Bullet();
 
         Jumping();
- 
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         // if (setActive == true)
@@ -54,17 +54,8 @@ public class Controller : MonoBehaviour
         movement.Set(v, 0f, -h);
         movement = movement.normalized * speed * Time.deltaTime; // time between every call
         playerRigidbody.MovePosition(transform.localPosition + movement);
-        //transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, Camera.main.transform.localEulerAngles.y, transform.localEulerAngles.z);
-    } 
-
-/*    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PickUp"))
-        {
-            other.gameObject.SetActive(false);
-        }
     }
-*/
+
     void Animating(float h, float v)
     {
         bool walking = h != 0f || v != 0f;
@@ -91,7 +82,7 @@ public class Controller : MonoBehaviour
             nextFire = Time.time + fireRate;
             clone = Instantiate(bullet, shotSpawn.position, shotSpawn.rotation) as Rigidbody;
             //clone.velocity = transform.forward * power;
-            clone.GetComponent<Rigidbody>().AddForce(angleShot*power, ForceMode.Impulse);
+            clone.GetComponent<Rigidbody>().AddForce(angleShot * power, ForceMode.Impulse);
         }
     }
 }
