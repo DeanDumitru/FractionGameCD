@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-/// <summary>
-/// This is the highscore class, it is used to handle all our highscores
-/// </summary>
+
 class HighScore : IComparable<HighScore>
 {
-    /// <summary>
-    /// The score
-    /// </summary>
+
     public int Score { get; set; }
 
     /// <summary>
@@ -28,13 +24,6 @@ class HighScore : IComparable<HighScore>
     /// </summary>
     public int ID { get; set; }
 
-    /// <summary>
-    /// The Highscore's constructor
-    /// </summary>
-    /// <param name="id">The highscore's database id</param>
-    /// <param name="score">The score</param>
-    /// <param name="name">The name of the highscores owner</param>
-    /// <param name="date">The date the highscore was created</param>
     public HighScore(int id, int score, string name, DateTime date)
     {
         this.Score = score;

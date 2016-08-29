@@ -7,7 +7,6 @@ public class SpawnScript : MonoBehaviour
 
     public Color32[] MColors;
 
-
     public GameObject[] tilePrefabs;
     public GameObject currentTile;
 
@@ -41,6 +40,8 @@ public class SpawnScript : MonoBehaviour
         }
     }
 
+    private int i = 0;
+
     void Start()
     {   
         //Creates 100 tiles
@@ -60,9 +61,7 @@ public class SpawnScript : MonoBehaviour
         
             GameObject Tile = Instantiate<GameObject>(tilePrefabs[0]);
             
-            Tile.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Lerp4(MColors[0], MColors[1], MColors[2], MColors[3], b);
-            
-            
+            Tile.transform.GetChild(0).GetComponent<MeshRenderer>().material.color = Lerp4(MColors[0], MColors[1], MColors[2], MColors[3], b);        
             tileEmpty.Push(Tile);
             tileEmpty.Peek().name = "TileEmpty";
             tileEmpty.Peek().SetActive(false);
@@ -71,49 +70,48 @@ public class SpawnScript : MonoBehaviour
 
     public void SpawnTile()
     {
-        int i = 0;
+       
         //If we are out of tiles, then we need to create more
         if (tileEmpty.Count == 0)
         {
             CreateTiles(10);
         }
 
+        
 
-
-        //Generating a random number between 0 and 1
-        int randomIndex = Random.Range(0, 1);
-        if (randomIndex == 0) //If the random number is one then spawn a left tile
+        int randomIndex = Random.Range(0, 1); // for later if tiles in different direction
+        if (randomIndex == 0) 
         {
             GameObject tmp = tileEmpty.Pop();
             tmp.SetActive(true);
             tmp.transform.position = currentTile.transform.GetChild(0).transform.GetChild(0).position;
             currentTile = tmp;
-            
-        }
 
-            int randomFraction = Random.Range(0, 5);
-        
-            if (randomFraction == 0)
+            i += 1; 
+            if (i == 5) // When a fraction should be spawned, ever  y 5 tiles
             {
                 int Fraction = Random.Range(0, 3);
 
                 if (Fraction == 0)
                 {
                     currentTile.transform.GetChild(1).gameObject.SetActive(true);
+                    i = 0;
                 }
 
                 else if (Fraction == 1)
                 {
                     currentTile.transform.GetChild(2).gameObject.SetActive(true);
+                    i = 0;
                 }
 
                 else if (Fraction == 2)
                 {
                     currentTile.transform.GetChild(3).gameObject.SetActive(true);
+                    i = 0;
                 }
             }
-        
-    }
+        }
+     }
 
  /*       else if (randomIndex == 1) //If the random number is one then spawn a top tile
         {

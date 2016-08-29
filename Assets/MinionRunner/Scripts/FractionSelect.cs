@@ -7,6 +7,9 @@ public class FractionSelect : MonoBehaviour {
 
     public GameObject myFraction;
     public GameObject RightWrongAnswer;
+    public GameObject lives;
+
+    public GameObject slowMotion;
 
     public Transform Player;
 
@@ -23,10 +26,37 @@ public class FractionSelect : MonoBehaviour {
 
     public Sprite[] right;
     public Sprite[] wrong;
-
+     
     private int AnswerCheck;
+    
+    void OnTriggerStay(Collider other) // Activate Particle System
+    {
+        if (other.tag == "Fraction2" && Input.GetButtonDown("Fire1")) 
+        {
+            other.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true); // this is working
+        }
+        else if(other.tag == "Fraction3" && Input.GetButtonDown("Fire1"))
+        {
+            other.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true); // working
+        }
+        else if (other.tag == "Fraction3" && Input.GetButtonDown("Fire2"))
+        {
+            other.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+            other.gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else if(other.tag == "Fraction4" && Input.GetButtonDown("Fire1"))
+        {
+            other.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true); // working
+        }
+        else if (other.tag == "Fraction4" && Input.GetButtonDown("Fire3"))
+        {
+            other.gameObject.transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
+            other.gameObject.transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
+            other.gameObject.transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
+        }
+    }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // show the fractions 
     {
         if (other.tag == "Fraction2")
         {
@@ -37,7 +67,7 @@ public class FractionSelect : MonoBehaviour {
             if (randomFraction == 0)
             {
                 myFraction.GetComponent<Image>().overrideSprite = oneHalf[0];
-                AnswerCheck = 1;
+                AnswerCheck = 1;                           
             }
             else if (randomFraction == 1)
             {
@@ -201,16 +231,23 @@ public class FractionSelect : MonoBehaviour {
 
     void SlowMo()
     {
-         if (Time.timeScale == 1.0F)
+        if (Time.timeScale == 1.0F)
+        {
             Time.timeScale = SlowMoTime;
-         else
+            slowMotion.gameObject.SetActive(true);
+        }
+        else
+        {
             Time.timeScale = 1.0F;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;            
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }          
     }
 
     void Reset()
     {
         myFraction.GetComponent<Image>().overrideSprite = reset[0];
+        slowMotion.gameObject.SetActive(false);
+        
     }
 
     void Reset2()
@@ -228,7 +265,7 @@ public class FractionSelect : MonoBehaviour {
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
             Debug.Log("1 = 1 ... + 5");
             AnswerCheck = 10;
-            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 6)];
+            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 5)];
             Reset();
             Invoke("Reset2", resetTime);
         }
@@ -237,14 +274,14 @@ public class FractionSelect : MonoBehaviour {
             if (AnswerCheck == 1)
             {
                 Scoring.score = Scoring.score - 5;
+              //  Scoring.lives = Scoring.lives - 1;
                 Time.timeScale = 1.0F;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
                 Debug.Log("1 = 1 wrong ... - 5");
-                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 6)];
+                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 5)];
                 Invoke("Reset2", resetTime);
                 AnswerCheck = 10;
                 Reset();
-
             }
         }
     }
@@ -257,7 +294,7 @@ public class FractionSelect : MonoBehaviour {
             Time.timeScale = 1.0F;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
             Debug.Log("2 = 2 ... + 5");
-            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 6)];
+            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 5)];
             Invoke("Reset2", resetTime);
             AnswerCheck = 10;
             Reset();
@@ -267,10 +304,11 @@ public class FractionSelect : MonoBehaviour {
             if (AnswerCheck == 2)
             {
                 Scoring.score = Scoring.score - 5;
+               // Scoring.lives = Scoring.lives - 1;
                 Time.timeScale = 1.0F;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
                 Debug.Log("2 = 2  wrong ... - 5");
-                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 6)];
+                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 5)];
                 Invoke("Reset2", resetTime);
                 AnswerCheck = 10;
                 Reset();
@@ -286,7 +324,7 @@ public class FractionSelect : MonoBehaviour {
             Time.timeScale = 1.0F;
             Time.fixedDeltaTime = 0.02F * Time.timeScale;
             Debug.Log("3 = 3.... +5");
-            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 6)];
+            RightWrongAnswer.GetComponent<Image>().overrideSprite = right[Random.Range(0, 5)];
             Invoke("Reset2", resetTime);
             AnswerCheck = 10;
             Reset();
@@ -297,10 +335,11 @@ public class FractionSelect : MonoBehaviour {
             if (AnswerCheck == 3)
             {
                 Scoring.score = Scoring.score - 5;
+            //    Scoring.lives = Scoring.lives - 1;
                 Time.timeScale = 1.0F;
                 Time.fixedDeltaTime = 0.02F * Time.timeScale;
                 Debug.Log("3 = 3  wrong ... - 5");
-                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 6)];
+                RightWrongAnswer.GetComponent<Image>().overrideSprite = wrong[Random.Range(0, 5)];
                 Invoke("Reset2", resetTime);
                 AnswerCheck = 10;
                 Reset();
@@ -308,6 +347,7 @@ public class FractionSelect : MonoBehaviour {
             }
         }
     }
+
 
     void Update()
     {
@@ -325,4 +365,12 @@ public class FractionSelect : MonoBehaviour {
         AnswerCheckThree();
 
     }
+
+  /*  public void gameOver()
+    {
+        if(Scoring.lives == 0)
+        {
+
+        }
+    }*/
 }

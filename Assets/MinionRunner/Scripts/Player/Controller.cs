@@ -6,7 +6,7 @@ public class Controller : MonoBehaviour
     public float speed = 6f;
     public float jump;
     public float jumpRate;
-    public float fireRate;
+ //   public float fireRate;
     public float power;
 
     [HideInInspector]
@@ -19,11 +19,11 @@ public class Controller : MonoBehaviour
     int floorMask;
     float camRayLength = 1000f;
 
-    public Rigidbody bullet;
-    public Transform shotSpawn;
+  //  public Rigidbody bullet;
+ //   public Transform shotSpawn;
 
     private float nextJump;
-    private float nextFire;
+   // private float nextFire;
 
     void Awake()
     {
@@ -36,7 +36,7 @@ public class Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        Bullet();
+       // Bullet();
 
         Jumping();
 
@@ -71,7 +71,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    public Vector3 angleShot = new Vector3(0, 0, 0);
+ /*   public Vector3 angleShot = new Vector3(0, 0, 0);
     public float angles;
 
     private void Bullet()
@@ -85,4 +85,5 @@ public class Controller : MonoBehaviour
             clone.GetComponent<Rigidbody>().AddForce(angleShot * power, ForceMode.Impulse);
         }
     }
+    */
 }

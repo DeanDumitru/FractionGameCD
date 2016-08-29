@@ -70,10 +70,11 @@ public class HighScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
    {
-        //if (Input.GetKeyDown(KeyCode.KeypadEnter)) //If we press escape then we want to show or hide the entername dialog
-        // {
-        //     nameDialog.SetActive(!nameDialog.activeSelf);
-        //}
+        if (Input.GetKeyDown(KeyCode.Escape)) //If we press escape then we want to show or hide the entername dialog
+        {
+            nameDialog.SetActive(!nameDialog.activeSelf);
+
+        }
 	}
 
     /// <summary>
@@ -113,15 +114,13 @@ public class HighScoreManager : MonoBehaviour {
 
         if (enterName.text != string.Empty) //Makes sure that we have some text to enter
         {
-            int score = Scoring.score; //Generates a random score
+            int score = UnityEngine.Random.Range(1, 500); //Generates a random score
 
             InsertScore(enterName.text, score); //Inserts the score in the database
 
             enterName.text = string.Empty; //resets the textfield
 
             ShowScores(); //Gets the scores form the database
-
-            nameDialog.gameObject.SetActive(false);
 
         }
     }
