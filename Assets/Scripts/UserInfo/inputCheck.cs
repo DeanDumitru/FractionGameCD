@@ -10,6 +10,7 @@ public class inputCheck : MonoBehaviour {
     public InputField email;
     public InputField dob;
     public InputField pn;
+    public InputField password;
 
     public GameObject instructions;
     public GameObject textIfFail;
@@ -20,6 +21,7 @@ public class inputCheck : MonoBehaviour {
     public GameObject emailReq;
     public GameObject dobReq;
     public GameObject pnReq;
+    public GameObject passReq;
 
     public string currentLevel;
 
@@ -34,7 +36,7 @@ public class inputCheck : MonoBehaviour {
              Debug.Log(name);
          }*/
 
-        if (username.text == "" || firstName.text == "" || lastName.text == "" || email.text == "" || dob.text == "" || pn.text == "")
+        if (username.text == "" || firstName.text == "" || lastName.text == "" || email.text == "" || dob.text == "" || pn.text == "" || password.text == "")
         {
             instructions.SetActive(false);
             textIfFail.SetActive(true);
@@ -51,6 +53,8 @@ public class inputCheck : MonoBehaviour {
                 dobReq.SetActive(true);
             //if (pn.text == "")
                 pnReq.SetActive(true);
+            //if (pn.text == "")
+                passReq.SetActive(true);
         }
 
         else
@@ -62,6 +66,7 @@ public class inputCheck : MonoBehaviour {
             dobReq.SetActive(false);
             pnReq.SetActive(false);
             textIfFail.SetActive(false);
+            passReq.SetActive(false);
 
             UserClass.player.userId = username.text;
             UserClass.player.firstName = firstName.text;
